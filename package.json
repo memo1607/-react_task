@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle":"./node_modules/.bin/webpack app/index.js dist/bundle.js",
+    "min":"cd dist && uglifyjs bundle.js -m -o bundle.min.js",
+    "build":"webpack"
   },
   "keywords": [],
   "author": "",

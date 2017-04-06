@@ -4,7 +4,7 @@ import foo from './foo';
 function component(){
     var element = j('<div></div>');
 
-    element.html( _.join(['Hello','webpack','!'],'')) ;
+    element.html( _.join(['Hello','webpack','!!'],'')) ;
 
     return element.get(0);
 }

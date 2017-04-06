@@ -2,7 +2,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  color:palegreen
 }
 #root2{
-  color:green;
+  color:seagreen;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;
+  margin:0 auto;
+  padding-top: 360px;
 }

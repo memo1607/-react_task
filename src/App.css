@@ -1,24 +1,36 @@
 .App {
+  color: seagreen;
+  border: 1px solid seagreen;
+  border-radius: 4px;
+  background: #e5f9e4;
+  margin: 2em;
+  padding:2em;
+  min-height: 20em;
+  min-width: 32em;
+  box-shadow: 0 0 3em hsla(0,0%,0%,0.35);
+}
+.App > .TodoList > li:nth-child(odd){
+  background: #dff3d8;
+  margin-bottom:2px;
+   border-radius: 5px;
+}
+.App > .TodoList > li:nth-child(even){
+  background: #d6f1d0;
+  margin-bottom:2px;
+   border-radius: 5px;
+}
+body{
+  background:#b2dca6;
+  font-family:'Microsoft YaHei';
+}
+#root{
+  padding-top:100px;
+  display:flex;
+  justify-content:center;
+  min-height:100px;  
+  
+}
+h1{
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  margin-bottom: 1em;
 }

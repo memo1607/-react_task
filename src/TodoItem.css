@@ -1,0 +1,30 @@
+
+.TodoList{
+     font-family:'Microsoft YaHei';
+     font-size:18px;
+      border-radius: 5px;
+}
+.TodoItem{  
+   max-width: 700px;
+   margin:2px;
+   padding:5px;
+   position:relative;
+ 
+}
+.TodoItem > input{
+    width:20px;   
+    height:20px;
+}
+.TodoItem > span{ 
+    line-height:20px;
+    word-wrap:break-word;
+    padding:0 10px;
+    over-flow:hidden;
+}
+.TodoItem > button{
+    height:20px;
+    font-family:'Microsoft YaHei';
+    color:#093936;
+    position:absolute;
+    right:0px;   
+}

@@ -3,17 +3,17 @@ import 'normalize.css';
 import './reset.css';
 import './App.css';
 import TodoInput from './TodoInput';
-import TodoItem from './TodoItem';
+import {TodoItem} from './TodoItem';
 
 
 class App extends Component {
+
   constructor(props){
     super(props)
     this.state = {
       newTodo: '',
       todoList:[ ]
-    }
-
+    }   
   }
   
   render() {
@@ -21,8 +21,7 @@ class App extends Component {
     let todos = this.state.todoList.filter((item)=> !item.deleted).map((item,index)=>{
       return <li key={index}>
         <TodoItem todo={item} onToggle={this.toggle.bind(this)} onDelete={this.delete.bind(this)}/>
-        </li>
-      
+        </li>    
     })
     return (
       <div className="App">

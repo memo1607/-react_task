@@ -19,7 +19,7 @@
     line-height:20px;
     word-wrap:break-word;
     padding:0 10px;
-    over-flow:hidden;
+    margin-right:20px;
 }
 .TodoItem > button{
     height:20px;

@@ -1,4 +1,5 @@
 import React from 'react';
+
 class Welcome extends React.Component {
   constructor(props){
       super(props)
@@ -10,15 +11,18 @@ class Welcome extends React.Component {
               date:new Date()
           })
       })
-  }  
-    
+  } 
+  
   render() {    
-    return
+    return(
      <div>
-        <h1>Hello, {this.props.name}</h1>;  
+        <h1>Hello, {this.props.name}</h1> 
         <h2>{this.state.date.toString()}</h2> 
-     </div>
-    
+       
+        
+     </div>     
+   )    
   }
+  
 }
 export default Welcome

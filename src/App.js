@@ -43,15 +43,13 @@ class App extends Component {
   }
   toggle(e,todo){
     todo.status = todo.status === 'completed' ? '' : 'completed'
-    this.setState(this.state)
-    
+    this.setState(this.state)    
   }
   changeTitle(event){
     this.setState({
       newTodo:event.target.value,
       todoList:this.state.todoList
-    })
-    
+    })   
   }
   addTodo(event){
     this.state.todoList.push({
@@ -63,20 +61,16 @@ class App extends Component {
     this.setState({
       newTodo:'',
       todoList:this.state.todoList
-    })  
-    
+    })     
   }
   delete(event, todo){
     todo.deleted = true
-    this.setState(this.state)
-    
+    this.setState(this.state)    
   }
-
   
 }
 
 export default App;
-
 let id =0
 function idMaker(){
   id += 1

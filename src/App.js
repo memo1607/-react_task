@@ -13,7 +13,7 @@ class App extends Component {
     super(props)
     this.state = {
       newTodo: '',
-      todoList:[ ] || loaclStore.load('todoList')
+      todoList:localStore.load('todoList') || [ ]
     }   
   }
   
@@ -39,7 +39,7 @@ class App extends Component {
   toggle(e,todo){
     todo.status = todo.status === 'completed' ? '' : 'completed'
     this.setState(this.state)
-    localStore.save('todoList',this,state.todoList)
+    localStore.save('todoList',this.state.todoList)
   }
   changeTitle(event){
     this.setState({
@@ -64,7 +64,7 @@ class App extends Component {
   delete(event, todo){
     todo.deleted = true
     this.setState(this.state)
-    loaclStore.save('todoList',this.state.todoList)
+    localStore.save('todoList',this.state.todoList)
   }
 
   

@@ -4,7 +4,16 @@ import './reset.css';
 import './App.css';
 import TodoInput from './TodoInput';
 import {TodoItem} from './TodoItem';
-import * as localStore from './localStore'
+import * as localStore from './localStore';
+import AV from 'leancloud-storage'
+
+var APP_ID = 'Rj0lqbOGihz4if8N47pyurCF-gzGzoHsz';
+var APP_KEY = 'iIyi8cOi3KXAXdL5KbAETrFa';
+AV.init({
+  appId: APP_ID,
+  appKey: APP_KEY
+});
+
 
 
 class App extends Component {

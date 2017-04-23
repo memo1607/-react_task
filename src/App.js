@@ -4,7 +4,7 @@ import './reset.css';
 import './App.css';
 import TodoInput from './TodoInput';
 import {TodoItem} from './TodoItem';
-import UserDialog from './UserDialog'
+import * as localStore from './localStore'
 
 
 
@@ -15,32 +15,37 @@ class App extends Component {
     super(props)
     this.state = {
       newTodo: '',
-      todoList: [ ]
+      todoList: localStore.load('todoList') || [ ]
     }   
   }
   
   render() {
  
-    let todos = this.state.todoList.filter((item)=> !item.deleted).map((item,index)=>{
+    let todos = this.state.todoList
+    .filter((item)=> !item.deleted)
+    .map((item,index)=>{
       return <li key={index}>
-        <TodoItem todo={item} onToggle={this.toggle.bind(this)} onDelete={this.delete.bind(this)}/>
+        <TodoItem todo={item} onToggle={this.toggle.bind(this)}
+         onDelete={this.delete.bind(this)}/>
         </li>    
     })
     return (
       <div className="App">
       <h1>我的待办</h1>
         <div className="inputwrapper">
-          <TodoInput content={this.state.newTodo} onChange={this.changeTitle.bind(this)} onSubmit={this.addTodo.bind(this)}/>
+          <TodoInput content={this.state.newTodo} 
+          onChange={this.changeTitle.bind(this)} 
+          onSubmit={this.addTodo.bind(this)}/>
         </div>
-        <ol className="TodoList">
+        <ol className="todoList">
         {todos}
         </ol>
-        <UserDialog/>
+       
       </div>
     )
   }
   componentDidUpdate(){
-   
+     localStore.save('todoList',this.state.todoList)
   }
   toggle(e,todo){
     todo.status = todo.status === 'completed' ? '' : 'completed'
